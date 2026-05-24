@@ -1,0 +1,802 @@
+
+<!DOCTYPE html>
+
+<html lang="kk">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ZHGU Абитуриент Жүйесі</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#f8f5ef,#f1e0cb);
+min-height:100vh;
+padding:40px 20px;
+overflow-x:hidden;
+}
+
+.container{
+width:100%;
+display:flex;
+justify-content:center;
+}
+
+.card{
+width:100%;
+max-width:1450px;
+background:white;
+border-radius:35px;
+padding:50px;
+box-shadow:0 15px 45px rgba(0,0,0,.08);
+}
+
+.title{
+text-align:center;
+font-size:58px;
+font-weight:700;
+color:#003ea8;
+margin-bottom:15px;
+}
+
+.line{
+width:180px;
+height:6px;
+border-radius:20px;
+background:linear-gradient(90deg,#003ea8,#d8b38c);
+margin:0 auto 50px;
+}
+
+.section{
+display:flex;
+align-items:center;
+gap:14px;
+margin:40px 0 25px;
+}
+
+.section span{
+background:#003ea8;
+color:white;
+padding:12px 24px;
+font-size:25px;
+font-weight:600;
+border-radius:14px;
+}
+
+.sectionLine{
+flex:1;
+height:3px;
+background:#003ea8;
+opacity:.25;
+}
+
+.grid2{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:24px;
+}
+
+.grid3{
+display:grid;
+grid-template-columns:1fr 1fr 1fr;
+gap:24px;
+}
+
+.inputBox{
+margin-bottom:20px;
+}
+
+label{
+display:block;
+margin-bottom:10px;
+font-size:17px;
+font-weight:600;
+color:#003ea8;
+}
+
+input,
+select{
+width:100%;
+padding:17px 18px;
+border:2px solid #d7e0f4;
+border-radius:16px;
+outline:none;
+font-size:16px;
+background:#fff;
+transition:.3s;
+}
+
+input:focus,
+select:focus{
+border-color:#003ea8;
+box-shadow:0 0 0 5px rgba(0,62,168,.08);
+}
+
+.addressGrid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:26px;
+margin-top:25px;
+}
+
+.addressCard{
+background:#faf7f2;
+padding:30px;
+border-radius:24px;
+border:1px solid #ece4da;
+}
+
+.addressTitle{
+font-size:28px;
+font-weight:700;
+color:#003ea8;
+margin-bottom:24px;
+}
+
+.manyBox{
+margin-top:25px;
+display:flex;
+align-items:center;
+gap:14px;
+}
+
+.manyLabel{
+display:flex;
+align-items:center;
+gap:14px;
+font-size:22px;
+font-weight:600;
+color:#003ea8;
+cursor:pointer;
+}
+
+.manyLabel input{
+width:22px;
+height:22px;
+}
+
+button{
+width:100%;
+margin-top:40px;
+padding:22px;
+border:none;
+border-radius:18px;
+background:linear-gradient(135deg,#003ea8,#0054d1);
+color:white;
+font-size:24px;
+font-weight:700;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+transform:translateY(-3px);
+}
+
+.footer{
+margin-top:30px;
+text-align:center;
+color:#666;
+}
+
+@media(max-width:950px){
+
+.grid2,
+.grid3,
+.addressGrid{
+grid-template-columns:1fr;
+}
+
+.card{
+padding:25px;
+}
+
+.title{
+font-size:42px;
+}
+
+}
+
+
+input[type="file"]{padding:14px;background:#f8fafc;border:2px dashed #003ea8;}</style>
+<!-- Code injected by Five-server -->
+  <script async data-id="five-server" data-file="c:\Users\ergal\Desktop\2030\index.html" type="application/javascript" src="/fiveserver.js"></script>
+  </head>
+<body>
+<div class="container">
+<div class="card">
+<div class="title">
+ZHGU АБИТУРИЕНТ ЖҮЙЕСІ
+</div>
+<div class="line"></div>
+<form id="form">
+<!-- АБИТУРИЕНТ -->
+<div class="section">
+<span>АБИТУРИЕНТ</span>
+<div class="sectionLine"></div>
+</div>
+<div class="grid2">
+<div class="inputBox">
+<label>Аты-жөні</label>
+<input id="studentName" required="" type="text"/>
+</div>
+<div class="inputBox">
+<label>ИИН</label>
+<input id="iin" required="" type="text"/>
+</div>
+<div class="inputBox">
+<label>Телефон</label>
+<input id="phone" type="text"/>
+</div>
+<div class="inputBox">
+<label>ЕНТ балы</label>
+<input id="entScore" type="number"/>
+</div>
+<div class="inputBox">
+<label>Туған күні</label>
+<input id="birthDate" type="date">
+</div>
+<div class="inputBox">
+<label>Мектеп атауы</label>
+<input id="schoolName" type="text">
+</div>
+<div class="inputBox">
+<label>Email</label>
+<input id="email" type="email"/>
+</div>
+<div class="inputBox">
+<label>Мамандық</label>
+<select id="speciality">
+<option value="">Таңдаңыз</option>
+<option>Информатика</option>
+<option>IT</option>
+<option>Педагогика</option>
+</select>
+</div>
+
+</div>
+<!-- ӘКЕСІ -->
+<div class="section">
+<span>ӘКЕСІ</span>
+<div class="sectionLine"></div>
+</div>
+<div class="grid2">
+<div class="inputBox">
+<label>Әкесінің аты-жөні</label>
+<input id="fatherName" type="text"/>
+</div>
+<div class="inputBox">
+<label>Жұмыс орны</label>
+<input id="field_1" type="text"/>
+</div>
+</div>
+<div class="grid3">
+<div class="inputBox">
+<label>Үй нөмірі</label>
+<input id="field_2" type="tel"/>
+</div>
+<div class="inputBox">
+<label>Жұмыс нөмірі</label>
+<input id="field_3" type="tel"/>
+</div>
+<div class="inputBox">
+<label>Қосымша нөмір</label>
+<input id="field_4" type="tel"/>
+</div>
+</div>
+<!-- ШЕШЕСІ -->
+<div class="section">
+<span>ШЕШЕСІ</span>
+<div class="sectionLine"></div>
+</div>
+<div class="grid2">
+<div class="inputBox">
+<label>Шешесінің аты-жөні</label>
+<input id="field_5" type="text"/>
+</div>
+<div class="inputBox">
+<label>Жұмыс орны</label>
+<input id="field_6" type="text"/>
+</div>
+</div>
+<div class="grid3">
+<div class="inputBox">
+<label>Үй нөмірі</label>
+<input id="field_7" type="tel"/>
+</div>
+<div class="inputBox">
+<label>Жұмыс нөмірі</label>
+<input id="field_8" type="tel"/>
+</div>
+<div class="inputBox">
+<label>Қосымша нөмір</label>
+<input id="field_9" type="tel"/>
+</div>
+</div>
+<!-- МЕКЕН ЖАЙ -->
+<div class="section">
+<span>МЕКЕН ЖАЙ</span>
+<div class="sectionLine"></div>
+</div>
+<div class="grid2">
+<div class="inputBox">
+<label>Облыс</label>
+<select id="regionSelect">
+<option value="">Облысты таңдаңыз</option>
+<option>Абай облысы</option>
+<option>Ақмола облысы</option>
+<option>Ақтөбе облысы</option>
+<option>Алматы облысы</option>
+<option>Атырау облысы</option>
+<option>Батыс Қазақстан облысы</option>
+<option>Жамбыл облысы</option>
+<option>Жетісу облысы</option>
+<option>Қарағанды облысы</option>
+<option>Қостанай облысы</option>
+<option>Қызылорда облысы</option>
+<option>Маңғыстау облысы</option>
+<option>Павлодар облысы</option>
+<option>Солтүстік Қазақстан облысы</option>
+<option>Түркістан облысы</option>
+<option>Ұлытау облысы</option>
+<option>Шығыс Қазақстан облысы</option>
+<option>Алматы</option>
+<option>Астана</option>
+<option>Шымкент</option>
+</select>
+</div>
+<div class="inputBox">
+<label>Аудан</label>
+<select id="districtSelect">
+<option value="">Ауданды таңдаңыз</option>
+</select>
+</div>
+<div class="inputBox">
+<label>Ауыл ма, қала ма?</label>
+<select id="placeType">
+<option value="">Таңдаңыз</option>
+<option value="Ауыл">Ауыл</option>
+<option value="Қала">Қала</option>
+</select>
+</div>
+</div>
+<!-- АУЫЛ / ҚАЛА -->
+<div class="addressGrid">
+<!-- АУЫЛ -->
+<div class="addressCard" id="villageBox">
+<div class="addressTitle">
+АУЫЛ
+</div>
+<div class="inputBox">
+<label>Ауыл атауы</label>
+<input id="field_10" placeholder="Ауыл атауы" type="text"/>
+</div>
+<div class="inputBox">
+<label>Көше</label>
+<input id="field_11" placeholder="Көше" type="text"/>
+</div>
+<div class="grid2">
+<div class="inputBox">
+<label>Үй</label>
+<input id="field_12" placeholder="Үй" type="text"/>
+</div>
+</div>
+</div>
+<!-- ҚАЛА -->
+<div class="addressCard" id="cityBox">
+<div class="addressTitle">
+ҚАЛА
+</div>
+<div class="inputBox">
+<label>Қала</label>
+<select id="field_14">
+<option value="">Қаланы таңдаңыз</option>
+<option>Алматы</option>
+<option>Астана</option>
+<option>Шымкент</option>
+<option>Ақтау</option>
+<option>Ақтөбе</option>
+<option>Атырау</option>
+<option>Қарағанды</option>
+<option>Қостанай</option>
+<option>Қызылорда</option>
+<option>Көкшетау</option>
+<option>Павлодар</option>
+<option>Петропавл</option>
+<option>Семей</option>
+<option>Талдықорған</option>
+<option>Тараз</option>
+<option>Түркістан</option>
+<option>Өскемен</option>
+<option>Орал</option>
+<option>Жезқазған</option>
+<option>Екібастұз</option>
+<option>Рудный</option>
+<option>Теміртау</option>
+<option>Жаңаөзен</option>
+<option>Сатпаев</option>
+<option>Балқаш</option>
+<option>Қонаев</option>
+</select>
+</div>
+<div class="inputBox">
+<label>Көше</label>
+<input id="field_15" placeholder="Көше" type="text"/>
+</div>
+<div class="grid2">
+<div class="inputBox">
+<label>Үй</label>
+<input id="field_16" placeholder="Үй" type="text"/>
+</div>
+<div class="inputBox">
+<label>Этаж</label>
+<input id="field_17" placeholder="Этаж" type="text"/>
+</div>
+</div>
+</div>
+</div>
+<!-- ҚҰЖАТТАР -->
+<div class="section">
+<span>ҚҰЖАТТАР</span>
+<div class="sectionLine"></div>
+</div>
+<div class="grid2">
+<div class="inputBox">
+<label>Абитуриент куәлігі</label>
+<input id="entCertificate" type="file"/>
+</div>
+<div class="inputBox">
+<label>Әкесінің куәлігі</label>
+<input id="field_18" type="file"/>
+</div>
+<div class="inputBox">
+<label>Шешесінің куәлігі</label>
+<input id="field_19" type="file"/>
+</div>
+<div class="inputBox">
+<label>ЕНТ сертификаты</label>
+<input id="field_20" type="file"/>
+</div>
+<div class="inputBox">
+<label>9 сынып аттестаты</label>
+<input id="attest9" id="9_21" type="file"/>
+</div>
+<div class="inputBox">
+<label>11 сынып аттестаты</label>
+<input id="attest11" id="11_22" type="file"/>
+</div>
+</div>
+<div class="manyBox">
+<label class="manyLabel">
+<input id="manyChildren" type="checkbox"/>
+<span>Көпбалалы отбасы</span>
+</label>
+</div>
+<div class="inputBox" id="manyChildrenDocument" style="display:none;">
+<label>Көпбалалы отбасы құжаты</label>
+<input id="manyChildrenFile" id="field_23" type="file"/>
+</div>
+<button type="submit">
+
+ЖІБЕРУ
+
+</button>
+</form>
+<div class="footer">
+© ZHGU SMART SYSTEM
+</div>
+</div>
+</div>
+<script>
+
+const districtData = {
+
+"Абай облысы":[
+"Абай ауданы",
+"Ақсуат ауданы",
+"Аягөз ауданы",
+"Бесқарағай ауданы",
+"Бородулиха ауданы",
+"Жарма ауданы",
+"Көкпекті ауданы",
+"Мақаншы ауданы",
+"Үржар ауданы"
+],
+
+"Ақмола облысы":[
+"Аршалы ауданы",
+"Астрахан ауданы",
+"Атбасар ауданы",
+"Біржан сал ауданы",
+"Бұланды ауданы",
+"Егіндікөл ауданы",
+"Ерейментау ауданы",
+"Есіл ауданы",
+"Жақсы ауданы",
+"Жарқайың ауданы",
+"Зеренді ауданы",
+"Қорғалжын ауданы",
+"Сандықтау ауданы",
+"Целиноград ауданы",
+"Шортанды ауданы"
+],
+
+"Ақтөбе облысы":[
+"Алға ауданы",
+"Әйтеке би ауданы",
+"Байғанин ауданы",
+"Ырғыз ауданы",
+"Қарғалы ауданы",
+"Қобда ауданы",
+"Мартөк ауданы",
+"Мұғалжар ауданы",
+"Ойыл ауданы",
+"Темір ауданы",
+"Хромтау ауданы",
+"Шалқар ауданы"
+],
+
+"Алматы облысы":[
+"Балқаш ауданы",
+"Еңбекшіқазақ ауданы",
+"Жамбыл ауданы",
+"Іле ауданы",
+"Қарасай ауданы",
+"Кеген ауданы",
+"Райымбек ауданы",
+"Талғар ауданы",
+"Ұйғыр ауданы"
+],
+
+"Атырау облысы":[
+"Жылыой ауданы",
+"Исатай ауданы",
+"Құрманғазы ауданы",
+"Қызылқоға ауданы",
+"Индер ауданы",
+"Мақат ауданы"
+],
+
+"Батыс Қазақстан облысы":[
+"Ақжайық ауданы",
+"Бәйтерек ауданы",
+"Бөкей ордасы ауданы",
+"Бөрлі ауданы",
+"Жаңақала ауданы",
+"Жәнібек ауданы",
+"Казталов ауданы",
+"Қаратөбе ауданы",
+"Сырым ауданы",
+"Тасқала ауданы",
+"Теректі ауданы",
+"Шыңғырлау ауданы"
+],
+
+"Жамбыл облысы":[
+"Байзақ ауданы",
+"Жамбыл ауданы",
+"Жуалы ауданы",
+"Қордай ауданы",
+"Меркі ауданы",
+"Мойынқұм ауданы",
+"Сарысу ауданы",
+"Талас ауданы",
+"Тұрар Рысқұлов ауданы",
+"Шу ауданы"
+],
+
+"Жетісу облысы":[
+"Ақсу ауданы",
+"Алакөл ауданы",
+"Ескелді ауданы",
+"Кербұлақ ауданы",
+"Көксу ауданы",
+"Қаратал ауданы",
+"Панфилов ауданы",
+"Сарқан ауданы"
+],
+
+"Қарағанды облысы":[
+"Ақтоғай ауданы",
+"Бұқар жырау ауданы",
+"Қарқаралы ауданы",
+"Нұра ауданы",
+"Осакаров ауданы",
+"Шет ауданы"
+],
+
+"Қостанай облысы":[
+"Алтынсарин ауданы",
+"Амангелді ауданы",
+"Әулиекөл ауданы",
+"Денисов ауданы",
+"Жангелдин ауданы",
+"Жітіқара ауданы",
+"Қамысты ауданы",
+"Қарабалық ауданы",
+"Қарасу ауданы",
+"Қостанай ауданы",
+"Меңдіқара ауданы",
+"Науырзым ауданы",
+"Сарыкөл ауданы",
+"Федоров ауданы"
+],
+
+"Қызылорда облысы":[
+"Арал ауданы",
+"Жалағаш ауданы",
+"Жаңақорған ауданы",
+"Қазалы ауданы",
+"Қармақшы ауданы",
+"Сырдария ауданы",
+"Шиелі ауданы"
+],
+
+"Маңғыстау облысы":[
+"Бейнеу ауданы",
+"Қарақия ауданы",
+"Маңғыстау ауданы",
+"Мұнайлы ауданы",
+"Түпқараған ауданы"
+],
+
+"Павлодар облысы":[
+"Аққулы ауданы",
+"Ақтоғай ауданы",
+"Баянауыл ауданы",
+"Ертіс ауданы",
+"Железин ауданы",
+"Май ауданы",
+"Павлодар ауданы",
+"Теренкөл ауданы",
+"Успен ауданы"
+],
+
+"Солтүстік Қазақстан облысы":[
+"Айыртау ауданы",
+"Ақжар ауданы",
+"Аққайың ауданы",
+"Ғабит Мүсірепов ауданы",
+"Есіл ауданы",
+"Жамбыл ауданы",
+"Мағжан Жұмабаев ауданы",
+"Мамлют ауданы",
+"Қызылжар ауданы",
+"Тайынша ауданы",
+"Тимирязев ауданы",
+"Уәлиханов ауданы",
+"Шал ақын ауданы"
+],
+
+"Түркістан облысы":[
+"Арыс ауданы",
+"Бәйдібек ауданы",
+"Жетісай ауданы",
+"Келес ауданы",
+"Қазығұрт ауданы",
+"Мақтаарал ауданы",
+"Ордабасы ауданы",
+"Отырар ауданы",
+"Сайрам ауданы",
+"Сарыағаш ауданы",
+"Созақ ауданы",
+"Төлеби ауданы",
+"Түлкібас ауданы",
+"Шардара ауданы"
+],
+
+"Ұлытау облысы":[
+"Жаңаарқа ауданы",
+"Ұлытау ауданы"
+],
+
+"Шығыс Қазақстан облысы":[
+"Алтай ауданы",
+"Глубокое ауданы",
+"Зайсан ауданы",
+"Катонқарағай ауданы",
+"Күршім ауданы",
+"Самар ауданы",
+"Тарбағатай ауданы",
+"Ұлан ауданы",
+"Шемонаиха ауданы"
+]
+
+};
+
+const regionSelect =
+document.getElementById('regionSelect');
+
+const districtSelect =
+document.getElementById('districtSelect');
+
+regionSelect.addEventListener('change',()=>{
+
+const selectedRegion =
+regionSelect.value;
+
+districtSelect.innerHTML =
+'<option value="">Ауданды таңдаңыз</option>';
+
+if(districtData[selectedRegion]){
+
+districtData[selectedRegion]
+.forEach(district=>{
+
+const option =
+document.createElement('option');
+
+option.value = district;
+option.textContent = district;
+
+districtSelect.appendChild(option);
+
+});
+
+}
+
+});
+
+const placeType =
+document.getElementById('placeType');
+
+const villageBox =
+document.getElementById('villageBox');
+
+const cityBox =
+document.getElementById('cityBox');
+
+villageBox.style.display = 'none';
+cityBox.style.display = 'none';
+
+placeType.addEventListener('change',()=>{
+
+if(placeType.value === 'Ауыл'){
+
+villageBox.style.display = 'block';
+cityBox.style.display = 'none';
+
+}
+
+else if(placeType.value === 'Қала'){
+
+cityBox.style.display = 'block';
+villageBox.style.display = 'none';
+
+}
+
+else{
+
+villageBox.style.display = 'none';
+cityBox.style.display = 'none';
+
+}
+
+});
+
+const manyChildren =
+document.getElementById('manyChildren');
+
+const manyChildrenDocument =
+document.getElementById('manyChildrenDocument');
+
+manyChildren.addEventListener('change',()=>{
+
+manyChildrenDocument.style.display =
+manyChildren.checked ? 'block' : 'none';
+
+});
+
+
+
+</script>
+<script src="script.js" type="module"></script>
+</body>
+</html>
